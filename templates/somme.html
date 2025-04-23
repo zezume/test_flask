@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jeu.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="jeu">
+    <h1>calcule la somme des chiffres</h1>
+        <p>calcule la somme des chiffres d’un nombre entier positif.</p>
+        <form action="{{ url_for('somme') }}" method="POST">
+            <p>
+                <label for="nombre">entre un chiffres :</label>
+                <input type="number" name="nombre" id="nombre" required autofocus>
+            </p>
+            <p>
+                <input class="btn" type="submit" value="Valider">
+            </p>
+        </form>
+        <hr>
+    {% if somme %}
+        <p>La somme des chiffres est {{ session['somme'] }} !</p>
+    {% endif %}
+</div>
+
+{% endblock %}
