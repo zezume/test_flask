@@ -1,7 +1,6 @@
 from random import randint
 from flask import Flask, render_template, request, redirect, url_for, session
 import secrets
-import requests
 from io import BytesIO
 from PyPDF2 import PdfReader
 
